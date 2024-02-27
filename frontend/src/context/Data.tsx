@@ -19,7 +19,6 @@ import {
   NAME_MIN_LENGTH,
   TEXT_MAX_LENGTH,
 } from "../utils/contants";
-// import { getChatId } from "../utils/utils";
 
 // Define the shape of the context state
 interface DataContextState {
