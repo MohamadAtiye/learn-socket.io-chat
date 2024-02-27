@@ -129,8 +129,7 @@ interface ContactRowProps {
   chatId: string;
 }
 function ContactRow({ chatId }: ContactRowProps) {
-  const { setCurrentWindow, currentWindow, chatData, profile, unseenChats } =
-    useData();
+  const { setCurrentWindow, currentWindow, chatData, unseenChats } = useData();
   return (
     <ListItemButton
       onClick={() => setCurrentWindow(chatId)}

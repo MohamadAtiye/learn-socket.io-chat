@@ -30,7 +30,7 @@ interface DataContextState {
   clearName: () => void;
   clearIdentity: () => void;
   currentWindow: string;
-  sendMassage: (v: string) => void;
+  sendMassage: (v: string, cb: () => void) => void;
   chatData: ChatData;
   setChatSeen: (chatId: string) => void;
   unseenChats: string[];
@@ -45,7 +45,7 @@ export const DataContext = createContext<DataContextState>({
   clearName: () => {},
   clearIdentity: () => {},
   currentWindow: "public",
-  sendMassage: (v) => {},
+  sendMassage: (v, cb) => {},
   chatData: {},
   setChatSeen: (chatId: string) => {},
   unseenChats: [],
@@ -189,7 +189,7 @@ export const ListContextProvider: React.FC<ListContextProviderProps> = ({
     );
   };
 
-  const sendMassage = (text: string) => {
+  const sendMassage = (text: string, cb: () => void) => {
     if (!socket.connected || !profile) return;
 
     text = text.trim();
@@ -208,6 +208,7 @@ export const ListContextProvider: React.FC<ListContextProviderProps> = ({
         temp[chatId].messages.push(M);
         return temp;
       });
+      cb && cb();
     });
   };
 

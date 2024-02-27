@@ -41,6 +41,20 @@ const ChatScreen: React.FC = () => {
     inputRef.current?.focus();
   };
 
+  const scrollToBottom = () => {
+    const anchor = document.querySelector("#scroll-bottom-anchor");
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
+  const scrollToBottomInstant = () => {
+    const anchor = document.querySelector("#scroll-bottom-anchor");
+    if (anchor) {
+      anchor.scrollIntoView({ block: "center" });
+    }
+  };
+
   const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       handleSend();
@@ -54,23 +68,11 @@ const ChatScreen: React.FC = () => {
     if (text.length < 1 || text.length > TEXT_MAX_LENGTH) return;
 
     // Handle sending the message
-    sendMassage(text);
+    sendMassage(text, () => {
+      focusOnTextField();
+      scrollToBottom();
+    });
     setInput("");
-    focusOnTextField();
-  };
-  const scrollToBottom = () => {
-    const anchor = document.querySelector("#scroll-bottom-anchor");
-    if (anchor) {
-      console.log("scrolling");
-      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
-  const scrollToBottomInstant = () => {
-    const anchor = document.querySelector("#scroll-bottom-anchor");
-    if (anchor) {
-      console.log("scrolling");
-      anchor.scrollIntoView({ block: "center" });
-    }
   };
 
   useEffect(() => {

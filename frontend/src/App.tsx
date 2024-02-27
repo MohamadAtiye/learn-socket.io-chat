@@ -13,7 +13,7 @@ function Header() {
   const { isConnected } = useData();
   return (
     <Typography variant="h4" component="h1" sx={{ mb: 2, textAlign: "center" }}>
-      Web Chat and Call {!isConnected && "(disconnected)"}
+      Web Chat {!isConnected && "(disconnected)"}
     </Typography>
   );
 }
