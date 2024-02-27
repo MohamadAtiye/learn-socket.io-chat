@@ -1,5 +1,5 @@
 # learn-socket.io-chat
-learning project using nodejs TS sockerIO backend for websocket communication, and React TS frontend for interface
+learning project using nodejs TS socket.io backend for websocket communication, and React TS frontend for interface
 
 # frontend techstack
 + React
