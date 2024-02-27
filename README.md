@@ -4,6 +4,8 @@ learning project using nodejs TS socket.io backend for websocket communication, 
 # frontend techstack
 + React
   + context provider
+  + components
+  + hooks
 + Typescript
 + MUI
 + Socket.io
