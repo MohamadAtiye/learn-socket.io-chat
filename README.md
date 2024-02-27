@@ -1,7 +1,27 @@
 # learn-socket.io-chat
 learning project using nodejs TS socket.io backend for websocket communication, and React TS frontend for interface
 
-# frontend techstack
+## How to use
+on the root of your project
+
+### for backend
+navigate to backend folder: `cd backend`
+
+install packages: `npm i`
+
+start backend: `npm start`
+
+### for frontend
+On another terminal, navigate to frontend folder: `cd frontend`
+
+install packages: `npm i`
+
+start frontend: `npm start`
+
+
+
+
+## frontend tech stack
 + React
   + context provider
   + components
@@ -10,10 +30,12 @@ learning project using nodejs TS socket.io backend for websocket communication, 
 + MUI
 + Socket.io
 
-# backend techstack
+## backend tech stack
 + nodejs
 + Typescript
 + Socket.io
+
+## Screeshots
 
 <img width="1208" alt="screenshot" src="https://github.com/MohamadAtiye/learn-socket.io-chat/assets/28847741/0fbb2c89-ec6f-485a-ae35-e62b990ff6ee">
 
